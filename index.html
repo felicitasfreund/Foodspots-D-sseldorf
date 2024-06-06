@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #splash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+            animation: fadeOut 5s ease-out forwards; /* Change duration as needed */
+            text-align: center;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+        #content {
+            display: none;
+            opacity: 0;
+            animation: fadeIn 1s 3s forwards; 
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="splash">
+        <a href="index.html">
+            <h4>Für die besten Foodspots klicke hier &#8659;</h4>
+            <img src="bilder/Skyline-Düsseldorf.jpg" alt="Bildbeschreibung"> <a href="index.html"></a>
+        </a>
+    </div>
+    
+    <div id="content">
+        <!-- Der Hauptinhalt Ihrer Seite kommt hier hin -->
+        <p>Entdecken Sie die besten Essensplätze in Düsseldorf!</p>
+    </div>
+
+    <script>
+        // JavaScript to handle content visibility after splash screen fades out
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('content').style.display = 'block';
+            }, 5000); // Match this duration with the fadeOut animation duration
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Obstsorten</title>
+    <script>
+        
+        var obstsorten = [];
+
+       
+        function obst() {
+           
+            var neueObstsorte = prompt("Bitte geben Sie eine Obstsorte ein:");
+
+          
+            if (neueObstsorte) {
+                obstsorten.push(neueObstsorte);
+
+                
+                var ausgabe = "Obstsorten im Warenkorb:<ul>";
+                for (var i = 0; i < obstsorten.length; i++) {
+                    ausgabe += "<li>" + obstsorten[i] + "</li>";
+                }
+                ausgabe += "</ul>";
+                ausgabe += "Anzahl der Artikel im Warenkorb: " + obstsorten.length;
+
+                
+                document.getElementById("idausgabe").innerHTML = ausgabe;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Obstsorten</h1>
+    <button onclick="obst();">Obstkorb füllen!</button>
+    <br><br>
+    <div id="idausgabe">hier kommt die Ausgabe...</div>
+</body>
+</html>
